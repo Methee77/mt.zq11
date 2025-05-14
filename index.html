@@ -1,32 +1,32 @@
-<!-- Header -->
-<header class="bg-white dark:bg-gray-800 shadow-md p-6 text-center relative">
-  <h1 class="text-3xl font-bold">Methee Jaisukdee</h1>
-  <p class="text-gray-600 dark:text-gray-300">เมธี ใจสุขดี</p>
-
-  <!-- ปุ่มเมนู -->
-  <div class="absolute top-6 right-4 flex items-center space-x-2">
-    <!-- ปุ่ม LinkedIn -->
-    <a
-      href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"
-      class="border border-white text-white dark:text-white px-3 py-1 rounded text-sm transition-all duration-200 hover:bg-white hover:text-gray-900 dark:hover:bg-gray-100 dark:hover:text-black hover:shadow-lg transform hover:scale-105"
-    >
-      My LinkedIn
-    </a>
-
-    <!-- ปุ่ม Resume -->
-    <a
-      href="resume.pdf" target="_blank"
-      class="border border-white text-white dark:text-white px-3 py-1 rounded text-sm transition-all duration-200 hover:bg-white hover:text-gray-900 dark:hover:bg-gray-100 dark:hover:text-black hover:shadow-lg transform hover:scale-105"
-    >
-      Resume
-    </a>
-
-    <!-- ปุ่ม Toggle Dark Mode -->
-    <button
-      id="toggleDarkMode"
-      class="bg-transparent border border-white text-white px-3 py-1 rounded text-sm hover:bg-white hover:text-black hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-    >
-      🌙
+<!DOCTYPE html>
+<html lang="th" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>บล็อกของฉัน</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Theme toggle (light/dark mode)
+      const toggleTheme = () => {
+        document.documentElement.classList.toggle("dark");
+      };
+    </script>
+  </head>
+  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen flex flex-col items-center justify-center p-8">
+    <!-- ปุ่มสลับโหมดอยู่มุมขวาบน -->
+    <button onclick="toggleTheme()" class="absolute top-4 right-4 rounded-full border border-gray-500 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+      สลับโหมด
     </button>
-  </div>
-</header>
+
+    <h1 class="text-3xl font-bold mt-8">ยินดีต้อนรับสู่บล็อกของฉัน</h1>
+    <p class="mt-2 text-center text-gray-700 dark:text-gray-300 max-w-md">
+      นี่คือพื้นที่สำหรับแชร์ความคิด ความรู้ และเรื่องราวต่าง ๆ ของฉัน
+    </p>
+
+    <!-- ปุ่ม 1 และ 2 ขนาดเท่ากันสี่เหลี่ยมขอบมนอยู่ข้างล่าง -->
+    <div class="flex gap-4 mt-6">
+      <button class="rounded-md border border-gray-500 px-6 py-3 w-32 hover:bg-gray-100 dark:hover:bg-gray-800 transition">1</button>
+      <button class="rounded-md border border-gray-500 px-6 py-3 w-32 hover:bg-gray-100 dark:hover:bg-gray-800 transition">2</button>
+    </div>
+  </body>
+</html>
