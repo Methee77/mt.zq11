@@ -1,32 +1,39 @@
 <!DOCTYPE html>
-<html lang="th" class="dark">
+<html lang="th">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>บล็อกของฉัน</title>
+    <title>โปรไฟล์ของฉัน</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      // Theme toggle (light/dark mode)
-      const toggleTheme = () => {
-        document.documentElement.classList.toggle("dark");
-      };
-    </script>
   </head>
-  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen flex flex-col items-center justify-center p-8">
-    <!-- ปุ่มสลับโหมดอยู่มุมขวาบน -->
-    <button onclick="toggleTheme()" class="absolute top-4 right-4 rounded-full border border-gray-500 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-      สลับโหมด
-    </button>
-
-    <h1 class="text-3xl font-bold mt-8">ยินดีต้อนรับสู่บล็อกของฉัน</h1>
-    <p class="mt-2 text-center text-gray-700 dark:text-gray-300 max-w-md">
-      นี่คือพื้นที่สำหรับแชร์ความคิด ความรู้ และเรื่องราวต่าง ๆ ของฉัน
-    </p>
-
-    <!-- ปุ่ม 1 และ 2 ขนาดเท่ากันสี่เหลี่ยมขอบมนอยู่ข้างล่าง -->
-    <div class="flex gap-4 mt-6">
-      <button class="rounded-md border border-gray-500 px-6 py-3 w-32 hover:bg-gray-100 dark:hover:bg-gray-800 transition">1</button>
-      <button class="rounded-md border border-gray-500 px-6 py-3 w-32 hover:bg-gray-100 dark:hover:bg-gray-800 transition">2</button>
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <!-- Header ส่วนบน -->
+    <div class="flex flex-col items-center py-16">
+      <img src="https://via.placeholder.com/150" alt="รูปโปรไฟล์" class="w-32 h-32 rounded-full border-2 border-gray-300 mb-4">
+      <h1 class="text-3xl font-semibold">ชื่อของคุณ</h1>
+      <p class="text-lg mt-2 text-gray-600">สโลแกนหรือคำอธิบายเล็กน้อย</p>
     </div>
+
+    <!-- ส่วนลิงก์ -->
+    <div class="flex flex-col items-center mt-12 px-4 space-y-4">
+      <a href="https://facebook.com" class="bg-white text-gray-900 w-full text-center py-4 rounded-md shadow-sm border border-gray-300 hover:bg-gray-100 transition duration-300">
+        Facebook
+      </a>
+      <a href="https://instagram.com" class="bg-white text-gray-900 w-full text-center py-4 rounded-md shadow-sm border border-gray-300 hover:bg-gray-100 transition duration-300">
+        Instagram
+      </a>
+      <a href="https://twitter.com" class="bg-white text-gray-900 w-full text-center py-4 rounded-md shadow-sm border border-gray-300 hover:bg-gray-100 transition duration-300">
+        Twitter
+      </a>
+      <a href="https://github.com" class="bg-white text-gray-900 w-full text-center py-4 rounded-md shadow-sm border border-gray-300 hover:bg-gray-100 transition duration-300">
+        GitHub
+      </a>
+      <!-- เพิ่มลิงก์อื่นๆ ได้ที่นี่ -->
+    </div>
+
+    <!-- Footer ส่วนล่าง -->
+    <footer class="mt-16 py-6 bg-gray-200 text-center text-gray-600">
+      <p>© 2025 ชื่อของคุณ | สร้างโดย <a href="https://github.com/yourusername" class="text-gray-900 hover:underline">GitHub</a></p>
+    </footer>
   </body>
 </html>
