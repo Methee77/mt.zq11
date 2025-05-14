@@ -1,77 +1,32 @@
-<!DOCTYPE html>
-<html lang="th" class="transition-colors duration-300">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Methee Jaisukdee - บล็อกส่วนตัว</title>
-    
-    <!-- ✅ โหลดฟอนต์ Kanit จาก Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap" rel="stylesheet" />
+<!-- Header -->
+<header class="bg-white dark:bg-gray-800 shadow-md p-6 text-center relative">
+  <h1 class="text-3xl font-bold">Methee Jaisukdee</h1>
+  <p class="text-gray-600 dark:text-gray-300">เมธี ใจสุขดี</p>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      // เปิดใช้ dark mode และเพิ่มฟอนต์ Kanit
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Kanit', 'sans-serif'],
-            },
-          },
-        },
-      };
-    </script>
-  </head>
-  <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans transition-colors duration-300">
-    <!-- Header -->
-    <header class="bg-white dark:bg-gray-800 shadow-md p-6 text-center relative">
-      <h1 class="text-3xl font-bold">Methee Jaisukdee</h1>
-      <p class="text-gray-600 dark:text-gray-300">updated 14 พฤษภาคม 2568</p>
-      <!-- Toggle Button -->
-      <button
-        id="toggleDarkMode"
-        class="absolute right-4 top-6 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-3 py-1 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
-      >
-        🌙
-      </button>
-    </header>
+  <!-- เมนูด้านขวา -->
+  <div class="absolute top-6 right-4 flex items-center space-x-2">
+    <!-- ปุ่ม LinkedIn -->
+    <a
+      href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"
+      class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm"
+    >
+      My LinkedIn
+    </a>
 
-    <!-- Main Content -->
-    <main class="max-w-3xl mx-auto px-4 py-10 space-y-10">
-      <!-- Blog Post 1 -->
-      <article class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
-        <h2 class="text-2xl font-semibold mb-2">Profile</h2>
-        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">เผยแพร่เมื่อ 14 พฤษภาคม 2025</p>
-        <p>
-          นายเมธี ใจสุขดี นิสิตภาคฤดูร้อน พ.ศ. 2568 หลักสูตรวิทยาศาสตรบัณฑิต สาขาเกษตรและสิ่งแวดล้อมศึกษา คณะศึกษาศาสตร์และพัฒนศาสตร์ มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน
-        </p>
-      </article>
+    <!-- ปุ่ม Resume -->
+    <a
+      href="resume.pdf" target="_blank"
+      class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm"
+    >
+      Resume
+    </a>
 
-      <!-- Blog Post 2 -->
-      <article class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
-        <h2 class="text-2xl font-semibold mb-2">เริ่มต้นกับ HTML และ CSS</h2>
-        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">เผยแพร่เมื่อ 10 พฤษภาคม 2025</p>
-        <p>
-          หากคุณเป็นมือใหม่ที่ต้องการเริ่มสร้างเว็บไซต์ HTML และ CSS คือสองสิ่งแรกที่ควรเรียนรู้...
-        </p>
-      </article>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white dark:bg-gray-800 shadow-inner p-6 mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
-      &copy; 2025 Methee Jaisukdee • เขียนด้วยใจ 💙
-    </footer>
-
-    <!-- JavaScript toggle -->
-    <script>
-      const btn = document.getElementById('toggleDarkMode');
-      const html = document.documentElement;
-
-      btn.addEventListener('click', () => {
-        html.classList.toggle('dark');
-        btn.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
-      });
-    </script>
-  </body>
-</html>
+    <!-- ปุ่ม Toggle Dark Mode -->
+    <button
+      id="toggleDarkMode"
+      class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-3 py-1 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+    >
+      🌙
+    </button>
+  </div>
+</header>
