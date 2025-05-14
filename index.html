@@ -1,39 +1,157 @@
 <!DOCTYPE html>
 <html lang="th">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>โปรไฟล์ของฉัน</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-100 text-gray-900 font-sans">
-    <!-- Header ส่วนบน -->
-    <div class="flex flex-col items-center py-16">
-      <img src="https://via.placeholder.com/150" alt="รูปโปรไฟล์" class="w-32 h-32 rounded-full border-2 border-gray-300 mb-4">
-      <h1 class="text-3xl font-semibold">ชื่อของคุณ</h1>
-      <p class="text-lg mt-2 text-gray-600">สโลแกนหรือคำอธิบายเล็กน้อย</p>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methee Jaisukdee</title>
+  <!-- ฟอนต์ Kanit -->
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Kanit', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-    <!-- ส่วนลิงก์ -->
-    <div class="flex flex-col items-center mt-12 px-4 space-y-4">
-      <a href="https://facebook.com" class="bg-white text-gray-900 w-full text-center py-4 rounded-md shadow-sm border border-gray-300 hover:bg-gray-100 transition duration-300">
-        Facebook
-      </a>
-      <a href="https://instagram.com" class="bg-white text-gray-900 w-full text-center py-4 rounded-md shadow-sm border border-gray-300 hover:bg-gray-100 transition duration-300">
-        Instagram
-      </a>
-      <a href="https://twitter.com" class="bg-white text-gray-900 w-full text-center py-4 rounded-md shadow-sm border border-gray-300 hover:bg-gray-100 transition duration-300">
-        Twitter
-      </a>
-      <a href="https://github.com" class="bg-white text-gray-900 w-full text-center py-4 rounded-md shadow-sm border border-gray-300 hover:bg-gray-100 transition duration-300">
-        GitHub
-      </a>
-      <!-- เพิ่มลิงก์อื่นๆ ได้ที่นี่ -->
-    </div>
+    body.dark-mode {
+      background-color: #121212;
+      color: white;
+    }
 
-    <!-- Footer ส่วนล่าง -->
-    <footer class="mt-16 py-6 bg-gray-200 text-center text-gray-600">
-      <p>© 2025 ชื่อของคุณ | สร้างโดย <a href="https://github.com/yourusername" class="text-gray-900 hover:underline">GitHub</a></p>
-    </footer>
-  </body>
+    .welcome-box {
+      background-color: #03a96b;
+      color: white;
+      width: 17.16cm;
+      height: 6.27cm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode .welcome-box {
+      background-color: #026b4c;
+    }
+
+    .main-text {
+      font-size: 36px;
+      margin: 5px 0;
+    }
+
+    .update-text {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    .toggle-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-family: 'Kanit', sans-serif;
+      background-color: white;
+      color: #03a96b;
+      border: 2px solid #03a96b;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-button:hover {
+      background-color: #03a96b;
+      color: white;
+    }
+
+    body.dark-mode .toggle-button {
+      background-color: #333;
+      color: white;
+      border-color: white;
+    }
+
+    body.dark-mode .toggle-button:hover {
+      background-color: white;
+      color: #121212;
+    }
+
+    .home-menu {
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: transparent;
+      border: 2px solid #03a96b;
+      color: #03a96b;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+    }
+
+    .home-menu:hover {
+      background-color: #03a96b;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+    }
+
+    body.dark-mode .home-menu {
+      border-color: white;
+      color: white;
+    }
+
+    body.dark-mode .home-menu:hover {
+      background-color: white;
+      color: #121212;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+    }
+
+    body.dark-mode .footer {
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-button" onclick="toggleMode()">เปลี่ยนโหมด</button>
+
+  <div class="welcome-box">
+    <p class="main-text">ยินดีต้อนรับสู่ระบบสารสนเทศ</p>
+    <p class="main-text">ภาคฤดูร้อน พ.ศ. 2568</p>
+    <p class="update-text">updated 12 พฤษภาคม 2568</p>
+  </div>
+
+  <!-- ลิงก์ไปที่หน้า rong.html -->
+  <a href="rong.html" style="text-decoration: none;">
+    <div class="home-menu">
+      เข้าสู่หน้าหลัก
+    </div>
+  </a>
+
+  <!-- ข้อความลิขสิทธิ์ -->
+  <div class="footer">
+    © 2568 Methee Jaisukdee | All Rights Reserved
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+</body>
 </html>
