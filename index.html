@@ -1,33 +1,46 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" class="transition-colors duration-300">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Methee Jaisukdee - บล็อกส่วนตัว</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // เปิดใช้ dark mode class-based
+      tailwind.config = {
+        darkMode: 'class',
+      };
+    </script>
   </head>
-  <body class="bg-gray-50 text-gray-800 font-sans">
+  <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans transition-colors duration-300">
     <!-- Header -->
-    <header class="bg-white shadow-md p-6 text-center">
+    <header class="bg-white dark:bg-gray-800 shadow-md p-6 text-center relative">
       <h1 class="text-3xl font-bold">Methee Jaisukdee</h1>
-      <p class="text-gray-600">บล็อกส่วนตัว • พูดคุย แชร์ และเรียนรู้</p>
+      <p class="text-gray-600 dark:text-gray-300">บล็อกส่วนตัว • พูดคุย แชร์ และเรียนรู้</p>
+      <!-- Toggle Button -->
+      <button
+        id="toggleDarkMode"
+        class="absolute right-4 top-6 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-3 py-1 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+      >
+        🌙
+      </button>
     </header>
 
     <!-- Main Content -->
     <main class="max-w-3xl mx-auto px-4 py-10 space-y-10">
       <!-- Blog Post 1 -->
-      <article class="bg-white p-6 rounded-xl shadow">
+      <article class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
         <h2 class="text-2xl font-semibold mb-2">บทความแรกของฉัน</h2>
-        <p class="text-gray-600 text-sm mb-4">เผยแพร่เมื่อ 14 พฤษภาคม 2025</p>
+        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">เผยแพร่เมื่อ 14 พฤษภาคม 2025</p>
         <p>
           ยินดีต้อนรับเข้าสู่บล็อกส่วนตัวของผม! ที่นี่ผมจะเขียนเกี่ยวกับการพัฒนาเว็บไซต์, ประสบการณ์ชีวิต และแนวคิดต่าง ๆ ที่น่าสนใจ...
         </p>
       </article>
 
       <!-- Blog Post 2 -->
-      <article class="bg-white p-6 rounded-xl shadow">
+      <article class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
         <h2 class="text-2xl font-semibold mb-2">เริ่มต้นกับ HTML และ CSS</h2>
-        <p class="text-gray-600 text-sm mb-4">เผยแพร่เมื่อ 10 พฤษภาคม 2025</p>
+        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">เผยแพร่เมื่อ 10 พฤษภาคม 2025</p>
         <p>
           หากคุณเป็นมือใหม่ที่ต้องการเริ่มสร้างเว็บไซต์ HTML และ CSS คือสองสิ่งแรกที่ควรเรียนรู้...
         </p>
@@ -35,8 +48,20 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white shadow-inner p-6 mt-10 text-center text-sm text-gray-500">
+    <footer class="bg-white dark:bg-gray-800 shadow-inner p-6 mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
       &copy; 2025 Methee Jaisukdee • เขียนด้วยใจ 💙
     </footer>
+
+    <!-- JavaScript toggle -->
+    <script>
+      const btn = document.getElementById('toggleDarkMode');
+      const html = document.documentElement;
+
+      btn.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        // เปลี่ยนไอคอนปุ่ม
+        btn.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
+      });
+    </script>
   </body>
 </html>
